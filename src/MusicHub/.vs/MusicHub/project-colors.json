@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "1c4e0f3e-d1a0-424b-a553-4b9c7bc6fb94": {
+      "ProjectGuid": "1c4e0f3e-d1a0-424b-a553-4b9c7bc6fb94",
+      "DisplayName": "MusicHub.API",
+      "ColorIndex": 0
+    },
+    "c5e79c11-90d9-40df-aec3-19ac5a916ac9": {
+      "ProjectGuid": "c5e79c11-90d9-40df-aec3-19ac5a916ac9",
+      "DisplayName": "MusicHub.Lib",
+      "ColorIndex": 1
+    },
+    "e289c4db-c90c-421c-a4b7-0bd364f0a8a9": {
+      "ProjectGuid": "e289c4db-c90c-421c-a4b7-0bd364f0a8a9",
+      "DisplayName": "MusicHub.IdentityServer",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}
