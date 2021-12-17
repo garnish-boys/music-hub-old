@@ -1,11 +1,33 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    "net6.0": {
+      "MusicHub.IdentityServer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/MusicHub.IdentityServer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MusicHub.IdentityServer.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "MusicHub.IdentityServer/1.0.0": {
+      "type": "project",
+      "path": "../MusicHub.IdentityServer/MusicHub.IdentityServer.csproj",
+      "msbuildProject": "../MusicHub.IdentityServer/MusicHub.IdentityServer.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0": []
+    "net6.0": [
+      "MusicHub.IdentityServer >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\tyler\\.nuget\\packages\\": {},
@@ -38,7 +60,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\tyler\\source\\repos\\garnish-boys\\music-hub\\src\\MusicHub\\MusicHub.IdentityServer\\MusicHub.IdentityServer.csproj": {
+              "projectPath": "C:\\Users\\tyler\\source\\repos\\garnish-boys\\music-hub\\src\\MusicHub\\MusicHub.IdentityServer\\MusicHub.IdentityServer.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

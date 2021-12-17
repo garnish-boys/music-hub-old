@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "9DPZ2axmdVu0SqU7qICxY/29HDCel5qdlUnZ91p/LJxJWmSp+kiCggQkgAYHTknO9Tt/NCuL51pHXlsrIk0YwQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\tyler\\source\\repos\\garnish-boys\\music-hub\\src\\MusicHub\\MusicHub.FileIO\\MusicHub.FileIO.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\tyler\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\tyler\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
+    "C:\\Users\\tyler\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "C:\\Users\\tyler\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
