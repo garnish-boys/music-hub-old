@@ -1,6 +1,0 @@
-C:\Users\tyler\source\repos\garnish-boys\music-hub\src\MusicHub\MusicHub.Db\bin\Debug\MusicHub.DB.dacpac
-C:\Users\tyler\source\repos\garnish-boys\music-hub\src\MusicHub\MusicHub.Db\bin\Debug\MusicHub.Db.dll
-C:\Users\tyler\source\repos\garnish-boys\music-hub\src\MusicHub\MusicHub.Db\bin\Debug\MusicHub.Db.pdb
-C:\Users\tyler\source\repos\garnish-boys\music-hub\src\MusicHub\MusicHub.Db\obj\Debug\MusicHub.DB.sqlproj.AssemblyReference.cache
-C:\Users\tyler\source\repos\garnish-boys\music-hub\src\MusicHub\MusicHub.Db\obj\Debug\MusicHub.Db.dll
-C:\Users\tyler\source\repos\garnish-boys\music-hub\src\MusicHub\MusicHub.Db\obj\Debug\MusicHub.Db.pdb

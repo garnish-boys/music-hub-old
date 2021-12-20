@@ -6,4 +6,18 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Duende.IdentityServer" Version="5.2.3" />
+    <PackageReference Include="Duende.IdentityServer.AspNetIdentity" Version="5.2.3" />
+    <PackageReference Include="Duende.IdentityServer.EntityFramework" Version="5.2.3" />
+    <PackageReference Include="Duende.IdentityServer.EntityFramework.Storage" Version="5.2.3" />
+    <PackageReference Include="Duende.IdentityServer.Storage" Version="5.2.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MusicHub\MusicHub.csproj" />
+  </ItemGroup>
+
 </Project>

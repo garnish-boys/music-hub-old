@@ -1,39 +1,39 @@
 {
   "Version": 1,
   "ProjectMap": {
-    "1c4e0f3e-d1a0-424b-a553-4b9c7bc6fb94": {
-      "ProjectGuid": "1c4e0f3e-d1a0-424b-a553-4b9c7bc6fb94",
-      "DisplayName": "MusicHub.API",
-      "ColorIndex": 0
-    },
-    "c5e79c11-90d9-40df-aec3-19ac5a916ac9": {
-      "ProjectGuid": "c5e79c11-90d9-40df-aec3-19ac5a916ac9",
-      "DisplayName": "MusicHub.Lib",
-      "ColorIndex": 1
-    },
-    "e289c4db-c90c-421c-a4b7-0bd364f0a8a9": {
-      "ProjectGuid": "e289c4db-c90c-421c-a4b7-0bd364f0a8a9",
-      "DisplayName": "MusicHub.IdentityServer",
-      "ColorIndex": 2
-    },
-    "cd48682d-e86d-4283-a8b3-4c6d942f973d": {
-      "ProjectGuid": "cd48682d-e86d-4283-a8b3-4c6d942f973d",
-      "DisplayName": "MusicHub.Identity",
-      "ColorIndex": 3
-    },
     "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
       "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
       "DisplayName": "Miscellaneous Files",
       "ColorIndex": -1
     },
-    "75fd2991-78d3-43b8-8284-4b19a1043a3a": {
-      "ProjectGuid": "75fd2991-78d3-43b8-8284-4b19a1043a3a",
-      "DisplayName": "MusicHub.FileIO",
+    "298d6a8a-0705-4c75-8569-ec21a1fd48b6": {
+      "ProjectGuid": "298d6a8a-0705-4c75-8569-ec21a1fd48b6",
+      "DisplayName": "MusicHub.SqlDB",
+      "ColorIndex": 0
+    },
+    "368b72c9-5011-4b16-8ad9-46f08906854d": {
+      "ProjectGuid": "368b72c9-5011-4b16-8ad9-46f08906854d",
+      "DisplayName": "MusicHub",
+      "ColorIndex": 1
+    },
+    "bb9aa5b3-6dc9-46d7-bd23-dbdee0d16386": {
+      "ProjectGuid": "bb9aa5b3-6dc9-46d7-bd23-dbdee0d16386",
+      "DisplayName": "MusicHub",
+      "ColorIndex": 2
+    },
+    "853b1d8a-7023-4f52-88d5-50f8b421ff01": {
+      "ProjectGuid": "853b1d8a-7023-4f52-88d5-50f8b421ff01",
+      "DisplayName": "MuicHub.Test",
+      "ColorIndex": 3
+    },
+    "d2183df6-30ea-4861-b1f5-a56a9db4a821": {
+      "ProjectGuid": "d2183df6-30ea-4861-b1f5-a56a9db4a821",
+      "DisplayName": "MusicHub.IdentityServer",
       "ColorIndex": 4
     },
-    "fc499d96-b826-4c69-b856-a1679c0a64d5": {
-      "ProjectGuid": "fc499d96-b826-4c69-b856-a1679c0a64d5",
-      "DisplayName": "MusicHub.DB",
+    "886b1acc-6880-426b-a08c-62a97af488e9": {
+      "ProjectGuid": "886b1acc-6880-426b-a08c-62a97af488e9",
+      "DisplayName": "Notes",
       "ColorIndex": 5
     }
   },
