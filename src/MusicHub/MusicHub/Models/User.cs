@@ -9,6 +9,6 @@ namespace MusicHub.Models
 {
     public class User : IdentityUser<string>
     {
-
+        public virtual List<Project> OwnedProjects { get; set; }
     }
 }

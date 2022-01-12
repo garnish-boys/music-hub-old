@@ -114,6 +114,10 @@ are good to have said early:
 * Once the Identity component is out of the way, building out the application will be easier and we'll have a real-world Identity system in place from the very start.
 * The identity and .NET Core stuff is a **lot** to deal with but the benefits are HUGE. These applications will be full-scale production ready applications with real functionality. Learning this stuff using Identity Server and the .NET Identity stuff is really analagous to learning to drive in a top-tier racecar.
 
+---
+
+
+
 
 <br/>
 <br/>

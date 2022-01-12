@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MusicHub.Data;
 using MusicHub.IdentityServer.Models;
 using System.Diagnostics;
 
@@ -7,7 +8,7 @@ namespace MusicHub.IdentityServer.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
+        
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
@@ -29,4 +30,7 @@ namespace MusicHub.IdentityServer.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
+
+    
+
 }
