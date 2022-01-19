@@ -15,15 +15,19 @@
 
     <title>@ViewData["Title"] - MusicHub.IdentityServer</title>
     
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />*@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/MusicHub.IdentityServer.styles.css" asp-append-version="true" />
+    <script src="https://kit.fontawesome.com/b6fda12197.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    <header class="flex-grow-1">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">MusicHub.IdentityServer</a>
+                <a class="navbar-brand text-primary" asp-area="" asp-controller="Home" asp-action="Index">
+                    <span  class="me-2"><i class="fas fa-music"></i></span>
+                    <span>AT Software</span>
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -31,35 +35,42 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-primary" href="~/.well-known/openid-configuration">Discovery</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                        @if (!string.IsNullOrWhiteSpace(name))
+                        
+                    </ul>
+                    @if (!string.IsNullOrWhiteSpace(name))
                         {
-                            <li class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">@name <b class="caret"></b></a>
-                    
-                                <div class="dropdown-menu">
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">@name <b class="caret"></b></a>
+                                
+                                <div class="dropdown-menu dropdown-menu-dark dropdown-menu-start dropdown-menu-sm-end">
+                                    <a class="dropdown-item" asp-controller="Profile" asp-action="Index">Profile</a>
+                                    <a class="dropdown-item" href="~/diagnostics">Diagnostics</a>
+                                    <a class="dropdown-item" href="~/grants">Grants</a>
                                     <a class="dropdown-item" asp-action="Logout" asp-controller="Account">Logout</a>
                                 </div>
-                            </li>
+                                
+                            </div>
+                        } else
+                        {
+                            <a class="nav-link text-primary" asp-action="Login" asp-controller="Account" asp-route-returnUrl="/">Login</a>
                         }
-                    </ul>
+                    
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container">
+    
+    <div class="container" id="mainContainer">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="footer text-muted flex-grow-1">
         <div class="container">
-            &copy; 2021 - MusicHub.IdentityServer - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2021 - AT Software - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

@@ -11,7 +11,7 @@ build_property.RootNamespace = MusicHub.IdentityServer
 build_property.ProjectDir = C:\Users\tyler\source\repos\garnish-boys\music-hub\src\MusicHub\MusicHub.IdentityServer\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
-build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = true
 build_property.MSBuildProjectDirectory = C:\Users\tyler\source\repos\garnish-boys\music-hub\src\MusicHub\MusicHub.IdentityServer
 build_property._RazorSourceGeneratorDebug = 
 
@@ -65,6 +65,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/tyler/source/repos/garnish-boys/music-hub/src/MusicHub/MusicHub.IdentityServer/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tyler/source/repos/garnish-boys/music-hub/src/MusicHub/MusicHub.IdentityServer/Views/Profile/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/tyler/source/repos/garnish-boys/music-hub/src/MusicHub/MusicHub.IdentityServer/Views/Shared/Error.cshtml]

@@ -9,6 +9,10 @@ namespace MusicHub.Models
 {
     public class User : IdentityUser<string>
     {
-        public virtual List<Project> OwnedProjects { get; set; }
+        public User()
+        {
+            Id = Guid.NewGuid().ToString();
+        }
+        public virtual List<Project> OwnedProjects { get; set; } = new List<Project>();
     }
 }

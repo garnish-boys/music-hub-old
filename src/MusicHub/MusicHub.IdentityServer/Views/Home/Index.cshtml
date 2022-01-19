@@ -2,26 +2,28 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div>
+    <h1 class="display-4">Admin Site</h1>
+    <p>This site will be the central Admin hub for all applications and identity.</p>
 </div>
 
-<ul>
-    <li>
-        IdentityServer publishes a
-        <a href="~/.well-known/openid-configuration">discovery document</a>
-        where you can find metadata and links to all the endpoints, key material, etc.
-    </li>
-    <li>
-        Click <a href="~/diagnostics">here</a> to see the claims for your current session.
-    </li>
-    <li>
-        Click <a href="~/grants">here</a> to manage your stored grants.
-    </li>
-    <li>
-        Here are links to the
-        <a href="https://github.com/duendesoftware/IdentityServer">source code repository</a>,
-        and <a href="https://github.com/duendesoftware/samples">ready to use samples</a>.
-    </li>
-</ul>
+<div class="card bg-dark mt-5">
+    <div class="card-body">
+        <h3>Features</h3>
+        <p>Only basic login/logout + registration available right now. More to come soon..</p>
+        <p>Features will be shown in sections below</p>
+
+        <hr />
+
+        <h4>User Accounts + Admin Site Login</h4>
+        <p>Right now, there is no "end user" site to register/log into. There is only this site (which is the identity server) so this will be considered the admin site.</p>
+        <p>The current application is based off the quickstart <a href="https://github.com/DuendeSoftware/Samples/tree/main/IdentityServer/v6/Quickstarts/5_AspNetIdentity">here</a>.</p>
+        <p>If you look at the  <a href="https://github.com/DuendeSoftware/Samples/tree/main/IdentityServer/v6/Quickstarts/5_AspNetIdentity/src/MvcClient">MVC Client Example</a>, that will basically be the end user site.</p>
+        
+        <div class="list-group d-inline-block min-30">
+            <a asp-controller="Account" asp-action="Login" asp-route-returnUrl="/" class="list-group-item list-group-item-action">Login</a>
+            <a asp-controller="Account" asp-action="Register" class="list-group-item list-group-item-action">Register</a>
+        </div>
+
+    </div>
+</div>
