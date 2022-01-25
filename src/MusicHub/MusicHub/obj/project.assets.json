@@ -2675,31 +2675,37 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\tyler\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\tsimmons\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\tyler\\source\\repos\\garnish-boys\\music-hub\\src\\MusicHub\\MusicHub\\MusicHub.csproj",
+      "projectUniqueName": "C:\\Users\\tsimmons\\Local Documents\\repos\\garnish-boys\\music-hub\\src\\MusicHub\\MusicHub\\MusicHub.csproj",
       "projectName": "MusicHub",
-      "projectPath": "C:\\Users\\tyler\\source\\repos\\garnish-boys\\music-hub\\src\\MusicHub\\MusicHub\\MusicHub.csproj",
-      "packagesPath": "C:\\Users\\tyler\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\tyler\\source\\repos\\garnish-boys\\music-hub\\src\\MusicHub\\MusicHub\\obj\\",
+      "projectPath": "C:\\Users\\tsimmons\\Local Documents\\repos\\garnish-boys\\music-hub\\src\\MusicHub\\MusicHub\\MusicHub.csproj",
+      "packagesPath": "C:\\Users\\tsimmons\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\tsimmons\\Local Documents\\repos\\garnish-boys\\music-hub\\src\\MusicHub\\MusicHub\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\tyler\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\tsimmons\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Users\\tsimmons\\Local Packages": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -2760,7 +2766,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -2,7 +2,7 @@
 @using MusicHub.IdentityServer.Models.IdentityServer
 @using Duende.IdentityServer;
 @using static Duende.IdentityServer.IdentityServerConstants
-@model IdentityResourcesViewModel
+@model ApiScopesViewModel
 
 
 
@@ -11,25 +11,20 @@
         event.preventDefault();
         console.log('name: ', name);
         var f = document.querySelector(`#${name}DeleteForm`);
-        //console.log('form', f);
         document.querySelector(`#${name}DeleteForm`).submit();
     }
 </script>
 
 <div class="row">
 
-    <div class="col-sm-12 col-lg-3">
-        <partial name="_IdentityConstantReferenceCard" />
-    </div>
-    
     <div class="col-sm-12 col-lg-9">
         <div class="card bg-dark">
             <div class="card-body">
-                <h3>Identity Resources</h3>
+                <h3>API Scopes</h3>
                 <hr />
 
-                <h5>Add New Resource</h5>
-                <form asp-action="IdentityResources" method="post">
+                <h5>Add New API Scope</h5>
+                <form asp-action="ApiScopes" method="post">
                     <div class="row mb-3">
                         <div class="form-group col-sm-12 col-lg-6">
                             <label class="form-label" asp-for="Resource.Name">Resource Name</label>
@@ -48,6 +43,10 @@
                                 <input class="form-control" asp-for="UserClaimsInput" />
                             </div>
                     
+                            <div class="form-group mb-3">
+                                <label class="form-label" asp-for="PropertiesInput">Properties</label>
+                                <input class="form-control" asp-for="PropertiesInput" placeholder="i.e. key:value,key:value"/>
+                            </div>
                             <div class="form-group">
                                 <label class="form-label" asp-for="Resource.Description">Description</label>
                                 <input class="form-control" asp-for="Resource.Description" />
@@ -86,7 +85,7 @@
                 
                 <hr />
 
-                <h5>Saved Resources</h5>
+                <h5>Saved API Scopes</h5>
 
                 <table class="table align-middle">
                     <thead>
@@ -101,7 +100,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach (var item in Model.IdentityResources){
+                        @foreach (var item in Model.ApiScopes){
                             <tr>
                                 <td class="fw-bold">@item.Name</td>
                                 <td>@item.DisplayName</td>
@@ -158,9 +157,9 @@
                                     <div class="modal fade" id="@($"{item.Name}Modal")" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
-                                                <form asp-action="UpdateIdentityResource" method="post">
+                                                <form asp-action="UpdateApiScope" method="post">
                                                     <div class="modal-header">
-                                                        <h5 class="modal-title" id="exampleModalLabel">Edit Identity Resource</h5>
+                                                        <h5 class="modal-title" id="exampleModalLabel">Edit API Scope</h5>
                                                         <button type="button" class="btn-close btn-secondary" data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
                                                     <div class="modal-body">
@@ -226,7 +225,7 @@
                                                         </div>
                                                     </div>
                                                 </form>
-                                                <form asp-controller="IdentityServer" asp-action="DeleteIdentityResource" method="post" id="@($"{item.Name}DeleteForm")" name="@($"{item.Name}DeleteForm")">
+                                                <form asp-controller="IdentityServer" asp-action="DeleteApiScope" method="post" id="@($"{item.Name}DeleteForm")" name="@($"{item.Name}DeleteForm")">
                                                     <input type="hidden" name="ResourceName" value="@item.Name">
                                                 </form>
                                             </div>
@@ -242,5 +241,3 @@
     </div>
 
 </div>
-
-

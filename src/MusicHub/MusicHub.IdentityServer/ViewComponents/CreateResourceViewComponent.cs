@@ -14,6 +14,9 @@ public class CreateResourceViewComponent : ViewComponent
 
     public async Task<IViewComponentResult> InvokeAsync(IEnumerable<Resource> resources)
     {
+        var t = new IdentityResource();
+
+
         return View(resources);
     }
 }

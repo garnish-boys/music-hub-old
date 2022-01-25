@@ -37,8 +37,13 @@
                         <li class="nav-item">
                             <a class="nav-link text-primary" href="~/.well-known/openid-configuration">Discovery</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-primary" asp-controller="IdentityServer" asp-action="Index">Identity</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link text-primary dropdown-toggle" href='#' data-bs-toggle="dropdown" >Identity</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" asp-controller="IdentityServer" asp-action="Index">Identity</a></li>
+                                <li><a class="dropdown-item" asp-controller="IdentityServer" asp-action="IdentityResources">Identity Resources</a></li>
+                                <li><a class="dropdown-item" asp-controller="IdentityServer" asp-action="ApiScopes">API Scopes</a></li>
+                            </ul>
                         </li> 
                     </ul>
                     @if (!string.IsNullOrWhiteSpace(name))

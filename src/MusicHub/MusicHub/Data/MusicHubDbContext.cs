@@ -25,7 +25,7 @@ namespace MusicHub.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=garnish-boy-box; Database=MusicHubDb; User Id=app-user; Password=GarnishBoys215;");
+            optionsBuilder.UseSqlServer("Server=192.168.0.205; Database=MusicHubDb; User Id=app-user; Password=GarnishBoys215;");
             base.OnConfiguring(optionsBuilder);
         }
 

@@ -32,7 +32,7 @@
                             <i class="fas fa-times text-danger"></i>
                         }
                     </div>
-                    <div class="d-flex align-items-center">
+                    @*<div class="d-flex align-items-center">
                         <span class="me-2">Required</span>
                         @if (item.Required)
                         {
@@ -51,7 +51,7 @@
                         {
                             <i class="fas fa-times text-danger"></i>
                         }
-                    </div>
+                    </div>*@
                     <div class="d-flex align-items-center">
                         <span class="me-2">Discovery</span>
                         @if (item.ShowInDiscoveryDocument)
@@ -107,14 +107,14 @@
                                                     <input class="form-check-input" type="checkbox" name="UpdatedResource.Enabled" checked @*@(item.Enabled ? "checked" : "")*@  />
                                                     <label class="form-check-label">Enabled</label>
                                                 </div>
-                                                <div class="form-check">
+                                                @*<div class="form-check">
                                                     <input class="form-check-input" type="checkbox" name="UpdatedResource.Required" @(item.Required ? "checked" : "") />
                                                     <label class="form-check-label">Required</label>
                                                 </div>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="checkbox" name="UpdatedResource.Emphasize" @(item.Emphasize ? "checked" : "") />
                                                     <label class="form-check-label">Emphasize</label>
-                                                </div>
+                                                </div>*@
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="checkbox" name="UpdatedResource.ShowInDiscoveryDocument" @(item.ShowInDiscoveryDocument ? "checked" : "") />
                                                     <label class="form-check-label">Discovery</label>

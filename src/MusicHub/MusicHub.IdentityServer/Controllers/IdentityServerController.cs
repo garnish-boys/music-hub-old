@@ -89,15 +89,27 @@ public class IdentityServerController : Controller
     //View
     public async Task<IActionResult> ApiScopes()
     {
-        var t = new ApiScope();
-        var scopes = await _identityDb.ApiScopes.ToListAsync();
-        var s = scopes.Select(s => s.ToModel()).ToList();
-
-        var s1 = s.First();
-
-        return View();
+        return View(new ApiScopesViewModel
+        {
+            ApiScopes = await _identityDb.ApiScopes
+                .Include(s => s.UserClaims).Include(s => s.Properties)
+                    .Select(s => s.ToModel()).ToListAsync()
+        });
     }
     //Create
+    [HttpPost]
+    public async Task<IActionResult> ApiScopes(ApiScopesViewModel model)
+    {
+        var newScope = model.Resource;
+        newScope.UserClaims = model?.UserClaimsInput.ToUserClaimList();
+        newScope.Properties = model?.PropertiesInput.ToResourceProperties();
+
+        _identityDb.ApiScopes.Add(newScope.ToEntity());
+        await _identityDb.SaveChangesAsync();
+        return RedirectToAction(nameof(ApiScopes));
+
+    }
+        
     //Update
     //Delete
 }
