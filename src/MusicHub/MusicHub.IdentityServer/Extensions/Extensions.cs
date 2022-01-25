@@ -23,5 +23,7 @@ namespace MusicHub.IdentityServer.Extensions
 
             return controller.View(viewName, new RedirectViewModel { RedirectUrl = redirectUri });
         }
+
+        
     }
 }

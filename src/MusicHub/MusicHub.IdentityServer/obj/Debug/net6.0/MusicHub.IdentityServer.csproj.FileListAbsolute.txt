@@ -399,3 +399,5 @@ C:\Users\tyler\source\repos\garnish-boys\music-hub\src\MusicHub\MusicHub.Identit
 C:\Users\tyler\source\repos\garnish-boys\music-hub\src\MusicHub\MusicHub.IdentityServer\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
 C:\Users\tyler\source\repos\garnish-boys\music-hub\src\MusicHub\MusicHub.IdentityServer\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
 C:\Users\tyler\source\repos\garnish-boys\music-hub\src\MusicHub\MusicHub.IdentityServer\obj\Debug\net6.0\MusicHub.IdentityServer.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\tyler\source\repos\garnish-boys\music-hub\src\MusicHub\MusicHub.IdentityServer\bin\Debug\net6.0\Humanizer.dll
+C:\Users\tyler\source\repos\garnish-boys\music-hub\src\MusicHub\MusicHub.IdentityServer\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll

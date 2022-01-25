@@ -37,7 +37,9 @@
                         <li class="nav-item">
                             <a class="nav-link text-primary" href="~/.well-known/openid-configuration">Discovery</a>
                         </li>
-                        
+                        <li class="nav-item">
+                            <a class="nav-link text-primary" asp-controller="IdentityServer" asp-action="Index">Identity</a>
+                        </li> 
                     </ul>
                     @if (!string.IsNullOrWhiteSpace(name))
                         {

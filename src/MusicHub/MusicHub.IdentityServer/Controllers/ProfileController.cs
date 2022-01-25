@@ -16,7 +16,7 @@ namespace MusicHub.IdentityServer.Controllers
         public IActionResult Index()
         {
             var usr = User;
-
+    
             return View("Index", usr.Identity.Name);
         }
     }

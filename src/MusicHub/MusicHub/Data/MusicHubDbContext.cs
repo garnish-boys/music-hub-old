@@ -19,7 +19,7 @@ namespace MusicHub.Data
         {
         }
 
-        public MusicHubDbContext(DbContextOptions options) : base(options)
+        public MusicHubDbContext(DbContextOptions<MusicHubDbContext> options) : base(options)
         {
         }
 

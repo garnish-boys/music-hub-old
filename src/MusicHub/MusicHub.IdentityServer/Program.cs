@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using MusicHub.Data;
 using MusicHub.IdentityServer.Config;
+using MusicHub.IdentityServer.Data;
 using MusicHub.Models;
 using Serilog;
 using Serilog.Events;
@@ -42,6 +43,11 @@ builder.Services.AddIdentity<User, Role>()
     .AddEntityFrameworkStores<MusicHubDbContext>()
     .AddDefaultTokenProviders();
 
+var migrationsAssembly = typeof(Program).Assembly.GetName().Name;
+var configConStr = builder.Configuration.GetConnectionString("Configuration");
+
+//builder.Services.AddDbContext<IdentityConfigDbContext>(opt => opt.UseSqlServer(configConStr));
+
 // Create and configure Identity Server builder
 var idServBuilder = builder.Services.AddIdentityServer(options =>
 {
@@ -51,9 +57,15 @@ var idServBuilder = builder.Services.AddIdentityServer(options =>
     options.Events.RaiseSuccessEvents = true;
     options.EmitStaticAudienceClaim = true;
 })
-    .AddInMemoryIdentityResources(IdentityServerConfig.IdentityResources) //IdentityServerConfig has all of the configuration
-    .AddInMemoryApiScopes(IdentityServerConfig.ApiScopes)
-    .AddInMemoryClients(IdentityServerConfig.Clients)
+    .AddConfigurationStore<IdentityConfigDbContext>(opt =>
+    {
+        opt.ConfigureDbContext = builder =>
+            builder.UseSqlServer(configConStr,
+            sql => sql.MigrationsAssembly(migrationsAssembly));
+    })
+    //.AddInMemoryIdentityResources(IdentityServerConfig.IdentityResources) //IdentityServerConfig has all of the configuration
+    //.AddInMemoryApiScopes(IdentityServerConfig.ApiScopes)
+    //.AddInMemoryClients(IdentityServerConfig.Clients)
     .AddAspNetIdentity<User>();
 
 builder.Services.AddAuthentication();
@@ -61,8 +73,6 @@ builder.Services.AddAuthentication();
 
 //App gets built first bc middleware gets access to DI services
 var app = builder.Build();
-
-
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
