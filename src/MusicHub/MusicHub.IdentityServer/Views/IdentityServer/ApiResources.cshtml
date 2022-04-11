@@ -1,0 +1,26 @@
+﻿@using IdentityModel
+@using MusicHub.IdentityServer.Models.IdentityServer
+@using Duende.IdentityServer;
+@using static Duende.IdentityServer.IdentityServerConstants
+@model ApiResourcesViewModel
+
+
+
+<script>
+    function deleteIdentityResource(event, name) {
+        event.preventDefault();
+        console.log('name: ', name);
+        var f = document.querySelector(`#${name}DeleteForm`);
+        document.querySelector(`#${name}DeleteForm`).submit();
+    }
+</script>
+
+<div class="row">
+
+    <div class="col-sm-12 col-lg-9">
+        <div class="card bg-dark">
+            <div class="card-body" id="reactContainer"></div>
+        </div>
+    </div>
+
+</div>

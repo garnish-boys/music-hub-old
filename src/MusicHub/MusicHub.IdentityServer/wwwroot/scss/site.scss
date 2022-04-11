@@ -1,0 +1,114 @@
+﻿/*Default vars - override and create to reuse*/
+$primary: #66fcf1;
+$secondary: #c5c6c7;
+$dark-bg: #0b0c10;
+$dark-alt-bg: #161820; 
+$dark-fg: #fcfcfd;
+
+
+
+/*Component overrides - use vars*/
+
+/*Body/Global*/
+$body-bg: $dark-bg;
+$body-color: $dark-fg;
+
+/*Type*/
+$headings-color: $primary;
+
+/*Buttons*/
+$btn-border-radius: 1rem;
+$btn-padding-x: 1.5rem;
+$btn-font-weight: 600;
+
+/*Modal*/
+$modal-content-bg: $dark-alt-bg;
+$modal-header-border-color: $primary;
+
+@import '../lib/bootstrap-5.1.3/bootstrap-5.1.3/scss/bootstrap.scss';
+
+
+
+
+html, body {
+    font-size: 14px;
+    /*background: $light;*/
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    
+}
+
+
+
+.welcome-page .logo {
+    width: 64px;
+}
+
+.icon-banner {
+    width: 32px;
+}
+
+.body-container {
+    margin-top: 60px;
+    padding-bottom: 40px;
+}
+
+.welcome-page li {
+    list-style: none;
+    padding: 4px;
+}
+
+.logged-out-page iframe {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+.grants-page .card {
+    margin-top: 20px;
+    border-bottom: 1px solid lightgray;
+}
+
+.grants-page .card .card-title {
+    font-size: 120%;
+    font-weight: bold;
+}
+
+.grants-page .card .card-title img {
+    width: 100px;
+    height: 100px;
+}
+
+.grants-page .card label {
+    font-weight: bold;
+}
+
+
+
+div#mainContainer {
+    flex-basis: auto;
+}
+.min-25 {
+    min-width: 25%;
+}
+
+.min-30 {
+    min-width: 30%;
+}
+
+.min-50 {
+    min-width: 50%;
+}
