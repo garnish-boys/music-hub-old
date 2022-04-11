@@ -11,10 +11,6 @@ namespace MusicHub.Data
 {
     public class MusicHubDbContext : IdentityDbContext<User, Role, string>
     {
-        public DbSet<Project> Projects { get; set; }
-        public DbSet<ProjectPermissions> ProjectPermissions { get; set; }
-
-
         public MusicHubDbContext()
         {
         }
@@ -32,10 +28,6 @@ namespace MusicHub.Data
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
-
-            builder.Entity<Project>()
-                .HasOne(p => p.Owner)
-                .WithMany(u => u.OwnedProjects);
         }
     }
 }

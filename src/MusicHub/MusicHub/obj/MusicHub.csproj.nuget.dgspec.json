@@ -1,35 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tsimmons\\Local Documents\\repos\\garnish-boys\\music-hub\\src\\MusicHub\\MusicHub\\MusicHub.csproj": {}
+    "C:\\Users\\tyler\\source\\repos\\garnish-boys\\music-hub\\src\\MusicHub\\MusicHub\\MusicHub.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tsimmons\\Local Documents\\repos\\garnish-boys\\music-hub\\src\\MusicHub\\MusicHub\\MusicHub.csproj": {
+    "C:\\Users\\tyler\\source\\repos\\garnish-boys\\music-hub\\src\\MusicHub\\MusicHub\\MusicHub.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tsimmons\\Local Documents\\repos\\garnish-boys\\music-hub\\src\\MusicHub\\MusicHub\\MusicHub.csproj",
+        "projectUniqueName": "C:\\Users\\tyler\\source\\repos\\garnish-boys\\music-hub\\src\\MusicHub\\MusicHub\\MusicHub.csproj",
         "projectName": "MusicHub",
-        "projectPath": "C:\\Users\\tsimmons\\Local Documents\\repos\\garnish-boys\\music-hub\\src\\MusicHub\\MusicHub\\MusicHub.csproj",
-        "packagesPath": "C:\\Users\\tsimmons\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tsimmons\\Local Documents\\repos\\garnish-boys\\music-hub\\src\\MusicHub\\MusicHub\\obj\\",
+        "projectPath": "C:\\Users\\tyler\\source\\repos\\garnish-boys\\music-hub\\src\\MusicHub\\MusicHub\\MusicHub.csproj",
+        "packagesPath": "C:\\Users\\tyler\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\tyler\\source\\repos\\garnish-boys\\music-hub\\src\\MusicHub\\MusicHub\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\tsimmons\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\tyler\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Users\\tsimmons\\Local Packages": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -54,23 +50,27 @@
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[6.0.1, )"
+              "version": "[6.0.3, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[6.0.1, )"
+              "version": "[6.0.3, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[6.0.1, )"
+              "version": "[6.0.3, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.1, )"
+              "version": "[6.0.3, )"
             },
             "Microsoft.Extensions.Identity.Stores": {
+              "target": "Package",
+              "version": "[6.0.3, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
               "version": "[6.0.1, )"
             }
@@ -90,7 +90,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

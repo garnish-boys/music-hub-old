@@ -109,8 +109,50 @@ public class IdentityServerController : Controller
         return RedirectToAction(nameof(ApiScopes));
 
     }
-        
     //Update
+    [HttpPost]
+    public async Task<IActionResult> UpdateApiScope(ApiScopesViewModel model)
+    {
+        var resource = await _identityDb.ApiScopes.Include(r => r.UserClaims)
+            .Include(r => r.Properties).FirstOrDefaultAsync(r => r.Name == model.UpdatedResource.Name);
+
+        resource.DisplayName = Request.Form["UpdatedResource.DisplayName"];
+        resource.Description = Request.Form["UpdatedResource.Description"];
+
+        resource.Required = string.IsNullOrEmpty(Request.Form["UpdatedResource.Required"]) ? false : true;
+        resource.Enabled = string.IsNullOrEmpty(Request.Form["UpdatedResource.Enabled"]) ? false : true;
+        resource.Emphasize = string.IsNullOrEmpty(Request.Form["UpdatedResource.Emphasize"]) ? false : true;
+        resource.ShowInDiscoveryDocument = string.IsNullOrEmpty(Request.Form["UpdatedResource.ShowInDiscoveryDocument"]) ? false : true;
+
+        var changesSaved = await _identityDb.SaveChangesAsync();
+
+        return RedirectToAction(nameof(ApiScopes));
+    }
     //Delete
+    [HttpPost]
+    public async Task<IActionResult> DeleteApiScope(string ResourceName)
+    {
+        var resource = await _identityDb.ApiScopes.FirstOrDefaultAsync(r => r.Name == ResourceName);
+
+        _identityDb.Remove(resource);
+
+        var changesSaved = await _identityDb.SaveChangesAsync();
+
+        return RedirectToAction(nameof(IdentityResources));
+    }
+
+    //*********** API Resources **********
+    //View
+    public async Task<IActionResult> ApiResources()
+    {
+        return View(new ApiResourcesViewModel
+        {
+            ApiResources = await _identityDb.ApiResources
+                .Include(s => s.UserClaims).Include(s => s.Properties)
+                    .Select(s => s.ToModel()).ToListAsync()
+        });
+    }
+    
+
 }
 

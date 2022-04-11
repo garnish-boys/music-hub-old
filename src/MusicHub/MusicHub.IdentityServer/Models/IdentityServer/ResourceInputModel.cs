@@ -21,16 +21,11 @@ public static class ResourceInputModelExtensions
         return userClaims.Split(delimiter).Select(c => c.Trim()).ToList();
     }
 
-
     public static IDictionary<string, string> ToResourceProperties(this string resourceProps, char propDelimiter = ',', char keyValueDelimiter = ':') 
-    { 
+    {
         if (string.IsNullOrEmpty(resourceProps)) return new Dictionary<string, string>();
         return resourceProps.Split(propDelimiter)
                 .Select(ps => ps.Trim().Split(keyValueDelimiter))
                     .ToDictionary(pair => pair[0], pair => pair[1]);
-    } 
-        
-        
-
-    
+    }
 }

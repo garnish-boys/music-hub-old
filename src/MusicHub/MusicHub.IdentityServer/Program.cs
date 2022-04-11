@@ -10,6 +10,7 @@ using Serilog.Sinks.SystemConsole.Themes;
 
 var builder = WebApplication.CreateBuilder(args);
 
+//Configure the Serilog logging
 Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.Debug()
                 .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
@@ -17,19 +18,14 @@ Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.Override("System", LogEventLevel.Warning)
                 .MinimumLevel.Override("Microsoft.AspNetCore.Authentication", LogEventLevel.Information)
                 .Enrich.FromLogContext()
-                // uncomment to write to Azure diagnostics stream
-                //.WriteTo.File(
-                //    @"D:\home\LogFiles\Application\identityserver.txt",
-                //    fileSizeLimitBytes: 1_000_000,
-                //    rollOnFileSizeLimit: true,
-                //    shared: true,
-                //    flushToDiskInterval: TimeSpan.FromSeconds(1))
                 .WriteTo.Console(outputTemplate: "[{Timestamp:HH:mm:ss} {Level}] {SourceContext}{NewLine}{Message:lj}{NewLine}{Exception}{NewLine}", theme: AnsiConsoleTheme.Code)
                 .CreateLogger();
 
+//COnfigure host process to use serilog
 builder.Host.UseSerilog();
 
 // Add necessary services for MVC to function
+builder.Services.AddRazorPages();
 builder.Services.AddControllersWithViews()
     .AddRazorRuntimeCompilation();
 
@@ -38,7 +34,7 @@ builder.Services.AddControllersWithViews()
 builder.Services.AddDbContext<MusicHubDbContext>(
     opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
 
-// Setup Identity services
+// Setup Identity services - configure EF core stores
 builder.Services.AddIdentity<User, Role>()
     .AddEntityFrameworkStores<MusicHubDbContext>()
     .AddDefaultTokenProviders();
@@ -88,9 +84,7 @@ app.UseRouting();
 app.UseIdentityServer();
 app.UseAuthorization();
 
-app.UseEndpoints(endpoints =>
-{
-    endpoints.MapDefaultControllerRoute();
-});
+app.MapRazorPages();
+app.MapDefaultControllerRoute();
 
 app.Run();

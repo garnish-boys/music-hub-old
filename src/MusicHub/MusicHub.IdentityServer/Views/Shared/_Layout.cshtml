@@ -39,7 +39,7 @@
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link text-primary dropdown-toggle" href='#' data-bs-toggle="dropdown" >Identity</a>
-                            <ul class="dropdown-menu">
+                            <ul class="dropdown-menu dropdown-menu-dark">
                                 <li><a class="dropdown-item" asp-controller="IdentityServer" asp-action="Index">Identity</a></li>
                                 <li><a class="dropdown-item" asp-controller="IdentityServer" asp-action="IdentityResources">Identity Resources</a></li>
                                 <li><a class="dropdown-item" asp-controller="IdentityServer" asp-action="ApiScopes">API Scopes</a></li>
@@ -80,9 +80,18 @@
             &copy; 2021 - AT Software - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Load React. -->
+    <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <!-- Load our React component. -->
+    
+
     <script src="~/js/site.js" asp-append-version="true"></script>
+
+    
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
