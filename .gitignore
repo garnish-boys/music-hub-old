@@ -396,3 +396,4 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/src/MusicHub/MusicHub.IdentityServer/keys/is-signing-key-7984B9F4121500267249646942618CB0.json
