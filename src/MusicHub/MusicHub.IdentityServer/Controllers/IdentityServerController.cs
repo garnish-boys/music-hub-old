@@ -152,7 +152,5 @@ public class IdentityServerController : Controller
                     .Select(s => s.ToModel()).ToListAsync()
         });
     }
-    
-
 }
 
