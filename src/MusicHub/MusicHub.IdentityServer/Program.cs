@@ -21,8 +21,8 @@ Log.Logger = new LoggerConfiguration()
                 .WriteTo.Console(outputTemplate: "[{Timestamp:HH:mm:ss} {Level}] {SourceContext}{NewLine}{Message:lj}{NewLine}{Exception}{NewLine}", theme: AnsiConsoleTheme.Code)
                 .CreateLogger();
 
-var conStr = "Server=192.168.0.192; Database=MusicHubIdentity; Uid=AppUser; Pwd=Password1;";
-var confConStr = "Server=192.168.0.192; Database=IdentityConfigDb; Uid=AppUser; Pwd=Password1;";
+var identityDbStr = builder.Configuration.GetConnectionString("IdentityDb");
+var identityConfigDbStr = builder.Configuration.GetConnectionString("IdentityConfigurationDb");
 
 var serverVersion = new MySqlServerVersion(new Version(10, 6, 7));
 
@@ -37,7 +37,7 @@ builder.Services.AddControllersWithViews()
 // Register DbContext for access to db using Sql Server and the
 // connection string labelled "Default" in appsettings.json
 builder.Services.AddDbContext<MusicHubDbContext>(
-    opt => opt.UseMySql(conStr, serverVersion));
+    opt => opt.UseMySql(identityConfigDbStr, serverVersion));
 
 // Setup Identity services - configure EF core stores
 builder.Services.AddIdentity<User, Role>()
@@ -63,7 +63,7 @@ var idServBuilder = builder.Services.AddIdentityServer(options =>
     .AddConfigurationStore<IdentityConfigDbContext>(opt =>
     {
         opt.ConfigureDbContext = builder =>
-            builder.UseMySql(confConStr, serverVersion, opt => 
+            builder.UseMySql(identityDbStr, serverVersion, opt => 
                 opt.MigrationsAssembly(migrationsAssembly));
     })
     //.AddInMemoryIdentityResources(IdentityServerConfig.IdentityResources) //IdentityServerConfig has all of the configuration
