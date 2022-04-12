@@ -21,7 +21,15 @@ namespace MusicHub.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=192.168.0.205; Database=MusicHubDb; User Id=app-user; Password=GarnishBoys215;");
+            var conStr = "Server=192.168.0.192; Database=MusicHubIdentity; Uid=AppUser; Pwd=Password1;";
+            var serverVersion = new MySqlServerVersion(new Version(10, 6, 7));
+
+            optionsBuilder.UseMySql(conStr, serverVersion)
+                .EnableSensitiveDataLogging()
+                .EnableDetailedErrors();
+                
+
+            //optionsBuilder.UseSqlServer("Server=192.168.0.205; Database=MusicHubDb; User Id=app-user; Password=GarnishBoys215;");
             base.OnConfiguring(optionsBuilder);
         }
 
