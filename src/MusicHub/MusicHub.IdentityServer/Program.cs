@@ -37,19 +37,16 @@ builder.Services.AddControllersWithViews()
 // Register DbContext for access to db using Sql Server and the
 // connection string labelled "Default" in appsettings.json
 builder.Services.AddDbContext<MusicHubDbContext>(
-    opt => opt.UseMySql(identityConfigDbStr, serverVersion));
+    opt => opt.UseMySql(identityDbStr, serverVersion));
 
 // Setup Identity services - configure EF core stores
 builder.Services.AddIdentity<User, Role>()
     .AddEntityFrameworkStores<MusicHubDbContext>()
     .AddDefaultTokenProviders();
 
-
-
+// Need to tell Identity Server storage which assembly to 
+// reference when looking for/applying db migration - see Migrations folder (has model snapshot, etc.)
 var migrationsAssembly = typeof(Program).Assembly.GetName().Name;
-var configConStr = builder.Configuration.GetConnectionString("Configuration");
-
-//builder.Services.AddDbContext<IdentityConfigDbContext>(opt => opt.UseSqlServer(configConStr));
 
 // Create and configure Identity Server builder
 var idServBuilder = builder.Services.AddIdentityServer(options =>
@@ -63,7 +60,7 @@ var idServBuilder = builder.Services.AddIdentityServer(options =>
     .AddConfigurationStore<IdentityConfigDbContext>(opt =>
     {
         opt.ConfigureDbContext = builder =>
-            builder.UseMySql(identityDbStr, serverVersion, opt => 
+            builder.UseMySql(identityConfigDbStr, serverVersion, opt => 
                 opt.MigrationsAssembly(migrationsAssembly));
     })
     //.AddInMemoryIdentityResources(IdentityServerConfig.IdentityResources) //IdentityServerConfig has all of the configuration
@@ -72,7 +69,6 @@ var idServBuilder = builder.Services.AddIdentityServer(options =>
     .AddAspNetIdentity<User>();
 
 builder.Services.AddAuthentication();
-    
 
 //App gets built first bc middleware gets access to DI services
 var app = builder.Build();
