@@ -1,0 +1,37 @@
+﻿@using Duende.IdentityServer.Models
+
+@model IEnumerable<ApiScope>
+
+<div class="card shadow-sm">
+    <div class="card-body">
+        <h2>API Scopes</h2>
+        <div>
+            <a class="link-primary" asp-action="Create">Create New API Scope</a>
+        </div>
+
+        <hr />
+
+        <table class="table align-middle">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Display Name</th>
+                    <th>Description</th>
+                    <th/>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var scope in Model)
+                {
+                    <tr>
+                        <td>@scope.Name</td>
+                        <td>@scope.DisplayName</td>
+                        <td>@scope.Description</td>
+                        <td><a class="link-primary" asp-action="Details" asp-route-id="@scope.Name">Details</a></td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+    </div>
+</div>

@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Models\Common\**" />
+    <Content Remove="Models\Common\**" />
+    <EmbeddedResource Remove="Models\Common\**" />
+    <None Remove="Models\Common\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Duende.IdentityServer" Version="6.0.4" />
     <PackageReference Include="Duende.IdentityServer.AspNetIdentity" Version="6.0.4" />
     <PackageReference Include="Duende.IdentityServer.EntityFramework" Version="6.0.4" />
@@ -25,10 +32,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MusicHub\MusicHub.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Models\Common\" />
   </ItemGroup>
 
 </Project>

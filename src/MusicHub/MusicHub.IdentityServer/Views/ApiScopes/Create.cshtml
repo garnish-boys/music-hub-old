@@ -1,0 +1,76 @@
+﻿@using MusicHub.IdentityServer.Models.IdentityServer
+
+@model ApiScopeViewModel
+
+<div class="row">
+    <div class="col-sm-12 col-lg-8">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                
+                <h3>Create API Scope</h3>
+                <hr />
+
+                <form asp-action="Create" method="post">
+                    <div class="row mb-3">
+                        <div class="form-group col-sm-12 col-lg-6">
+                            <label class="form-label" asp-for="Resource.Name">Scope Name</label>
+                            <input class="form-control" asp-for="Resource.Name" />
+                        </div>
+                        <div class="form-group  col-sm-12 col-lg-6">
+                            <label class="form-label" asp-for="Resource.DisplayName">Display Name</label>
+                            <input class="form-control" asp-for="Resource.DisplayName" />
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-sm-12 col-lg-8">
+                            <div class="form-group mb-3">
+                                <label class="form-label" asp-for="UserClaimsInput">User Claims (comma separated)</label>
+                                <input class="form-control" asp-for="UserClaimsInput" />
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label class="form-label" asp-for="PropertiesInput">Resource Properties</label>
+                                <input class="form-control" asp-for="PropertiesInput" />
+                            </div>
+                    
+                            <div class="form-group">
+                                <label class="form-label" asp-for="Resource.Description">Description</label>
+                                <input class="form-control" asp-for="Resource.Description" />
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-4">
+                            <h5>General</h5>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" asp-for="Resource.Enabled" />
+                                <label class="form-check-label" asp-for="Resource.Enabled"></label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" asp-for="Resource.Required" />
+                                <label class="form-check-label" asp-for="Resource.Required"></label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" asp-for="Resource.Emphasize" />
+                                <label class="form-check-label" asp-for="Resource.Emphasize"></label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" asp-for="Resource.ShowInDiscoveryDocument" />
+                                <label class="form-check-label" asp-for="Resource.ShowInDiscoveryDocument">Show in Discovery</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Create</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-12 col-lg-3">
+        <partial name="_IdentityConstantReferenceCard" />
+    </div>
+</div>
+

@@ -1,0 +1,142 @@
+﻿@using Duende.IdentityServer.Models
+@model Client
+
+<div class="card shadow-sm w-50">
+    <div class="card-body">
+
+        <h2>Add New Client</h2>
+
+        <hr />
+
+        <form asp-action="Create" method="post">
+
+            <h4>General</h4>
+
+            <div class="form-floating mb-3">
+                <input asp-for="ClientName" class="form-control" placeholder="Client Name"   />
+                <label asp-for="ClientName">Client Name</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <textarea asp-for="Description" class="form-control" placeholder="Description" style="height: 100px;" ></textarea>
+                <label asp-for="Description">Description</label>
+            </div>
+
+            <div class="form-floating mb-5">
+                <input asp-for="LogoUri" class="form-control" placeholder="Logo Uri"   />
+                <label asp-for="LogoUri">Logo Uri</label>
+            </div>
+
+            
+            <h4>Uri Setup</h4>
+
+            <div class="form-floating mb-3">
+                <input asp-for="ClientUri" class="form-control" placeholder="Client Uri"   />
+                <label asp-for="ClientUri">Client Uri</label>
+            </div>
+
+            
+
+            <div class="input-group input-group-sm mb-3">
+                <span class="input-group-text w-25">Logo Uri</span>
+                <input class="form-control" asp-for="LogoUri" />
+            </div>
+
+            <div class="input-group input-group-sm mb-3">
+                <span class="input-group-text text-wrap w-25">Front Channel Logout Uri</span>
+                <input class="form-control" asp-for="FrontChannelLogoutUri" />
+            </div>
+            
+            <div class="form-group mb-3">
+                <label class="form-label" asp-for="FrontChannelLogoutUri">Front Channel Logout Uri</label>
+                <input class="form-control" asp-for="FrontChannelLogoutUri" />
+            </div>
+
+                    <div class="form-group mb-3">
+                        <label class="form-label" asp-for="BackChannelLogoutUri">Back Channel Logout Uri</label>
+                        <input class="form-control" asp-for="BackChannelLogoutUri" />
+                    </div>
+                
+
+                
+                    <div class="form-check mb-2 mt-3">
+                        <input class="form-check-input" type="checkbox" asp-for="Enabled" />
+                        <label class="form-check-label" asp-for="Enabled">Enabled</label>
+                    </div>
+
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" asp-for="RequireConsent" />
+                        <label class="form-check-label" asp-for="RequireConsent">Require Consent</label>
+                    </div>
+
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" asp-for="AllowRememberConsent" />
+                        <label class="form-check-label" asp-for="AllowRememberConsent">Allow Remember Consent</label>
+                    </div>
+
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" asp-for="RequirePkce" />
+                        <label class="form-check-label" asp-for="RequirePkce">Require PKCE</label>
+                    </div>
+
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" asp-for="AllowPlainTextPkce" />
+                        <label class="form-check-label" asp-for="AllowPlainTextPkce">Allow Plaintext PKCE</label>
+                    </div>
+
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" asp-for="AllowAccessTokensViaBrowser" />
+                        <label class="form-check-label" asp-for="AllowAccessTokensViaBrowser">Allow Access Tokens via Browser</label>
+                    </div>
+
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" asp-for="FrontChannelLogoutSessionRequired" />
+                        <label class="form-check-label" asp-for="FrontChannelLogoutSessionRequired">Front Channel Logout Session Required</label>
+                    </div>
+
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" asp-for="BackChannelLogoutSessionRequired" />
+                        <label class="form-check-label" asp-for="BackChannelLogoutSessionRequired">Back Channel Logout Session Required</label>
+                    </div>
+
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" asp-for="AllowOfflineAccess" />
+                        <label class="form-check-label" asp-for="AllowOfflineAccess">Allow Offline Access</label>
+                    </div>
+
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" asp-for="AlwaysIncludeUserClaimsInIdToken" />
+                        <label class="form-check-label" asp-for="AlwaysIncludeUserClaimsInIdToken">Always Include User Claims in ID Token</label>
+                    </div>
+
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" asp-for="UpdateAccessTokenClaimsOnRefresh" />
+                        <label class="form-check-label" asp-for="UpdateAccessTokenClaimsOnRefresh">Update Access Token Claims on Refresh</label>
+                    </div>
+
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" asp-for="EnableLocalLogin" />
+                        <label class="form-check-label" asp-for="EnableLocalLogin">Enable Local Login</label>
+                    </div>
+
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" asp-for="IncludeJwtId" />
+                        <label class="form-check-label" asp-for="IncludeJwtId">Include JWT Id</label>
+                    </div>
+
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" asp-for="AlwaysSendClientClaims" />
+                        <label class="form-check-label" asp-for="AlwaysSendClientClaims">Always Send Client Claims</label>
+                    </div>
+
+
+                
+
+            
+
+            
+
+        </form>
+
+    </div>
+</div>

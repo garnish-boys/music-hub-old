@@ -22,9 +22,9 @@
 </head>
 <body>
     <header class="flex-grow-1">
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark mb-3">
+        <nav class="navbar navbar-expand-sm mb-3 navbar-dark bg-primary shadow-sm">
             <div class="container-fluid">
-                <a class="navbar-brand text-primary" asp-area="" asp-controller="Home" asp-action="Index">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
                     <span  class="me-2"><i class="fas fa-music"></i></span>
                     <span>AT Software</span>
                 </a>
@@ -35,24 +35,23 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-primary" href="~/.well-known/openid-configuration">Discovery</a>
+                            <a class="nav-link" href="~/.well-known/openid-configuration">Discovery</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link text-primary dropdown-toggle" href='#' data-bs-toggle="dropdown" >Identity</a>
-                            <ul class="dropdown-menu dropdown-menu-dark">
-                                <li><a class="dropdown-item" asp-controller="IdentityServer" asp-action="Index">Identity</a></li>
-                                <li><a class="dropdown-item" asp-controller="IdentityServer" asp-action="IdentityResources">Identity Resources</a></li>
-                                <li><a class="dropdown-item" asp-controller="IdentityServer" asp-action="ApiScopes">API Scopes</a></li>
-                                <li><a class="dropdown-item" asp-controller="IdentityServer" asp-action="ApiResources">API Resources</a></li>
+                            <a class="nav-link dropdown-toggle" href='#' data-bs-toggle="dropdown" >Identity</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" asp-controller="IdentityResources" asp-action="Index">Identity Resources</a></li>
+                                <li><a class="dropdown-item" asp-controller="ApiScopes" asp-action="Index">API Scopes</a></li>
+                                <li><a class="dropdown-item" asp-controller="Clients" asp-action="Index">Clients</a></li>
                             </ul>
                         </li> 
                     </ul>
                     @if (!string.IsNullOrWhiteSpace(name))
                         {
                             <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">@name <b class="caret"></b></a>
+                                <a href="#" class="nav-link dropdown-toggle text-light" data-bs-toggle="dropdown">@name <b class="caret"></b></a>
                                 
-                                <div class="dropdown-menu dropdown-menu-dark dropdown-menu-start dropdown-menu-sm-end">
+                                <div class="dropdown-menu dropdown-menu-start dropdown-menu-sm-end">
                                     <a class="dropdown-item" asp-controller="Profile" asp-action="Index">Profile</a>
                                     <a class="dropdown-item" href="~/diagnostics">Diagnostics</a>
                                     <a class="dropdown-item" href="~/grants">Grants</a>
